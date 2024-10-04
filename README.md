@@ -15,11 +15,11 @@ saveAuth()\
 {id: string, data {login:string, password:string, companyName: string, site:string, sitePicture:string, notes:string}}
 
 Добавляет/перезаписывает данные для элемента в localStorage с идентификатором равным id\
-Закрывает модалку вызовом функции сloseModal()\
+Закрывает модалку вызовом функции сloseModal()
 
 editAuth()\
 Параметры:\
-Id – идентификатор пароля в localStorage\
+Id – идентификатор пароля в localStorage
 
 Получить данные о пароле с идентификатором равным id\
 *Открывает модальное окно функцией openModal()\
@@ -46,7 +46,7 @@ renderAuthInfo()\
 {login:string, password:string, companyName: string, site:string, sitePicture:string, notes:string}
 
 *Создает компонент с отрисовкой всех полей для отображения инфомрации о пароле\
-*Возвращает DOM-узел\
+*Возвращает DOM-узел
 
 showAuthInfo()\
 Параметры: \
