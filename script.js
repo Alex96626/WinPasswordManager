@@ -5,6 +5,16 @@ const modalWindow = document.querySelector('.modal-container');
 const page = document.querySelector('.page');
 const inputUserData = document.querySelectorAll('.modal-input');
 
+localStorage.setItem('winPas', JSON.stringify({
+    'adobe': {
+        login: 'thomas@gmail.com',
+        password: '12345',
+        webSite: 'adobe.com',
+        notes: 'loren ipsum',
+        logo: "./images/",
+    },  
+}))
+
 function openModal() {
     modalWindow.classList.add('modal-open');
     page.classList.add('no-scroll');
