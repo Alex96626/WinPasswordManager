@@ -214,11 +214,11 @@ function createPassInfo(data) {
 
 function showPassInfo(data) {
 
+    passInfoContent.innerHTML = '';
+
     if (!data) {
         return;
-    }
-
-    passInfoContent.innerHTML = '';
+    } 
 
     const {name, logo} = data;
 
@@ -299,22 +299,20 @@ function saveAuth(event) {
     }   
 
     const passName = formData.name;
-    
+        
     saveToLocalStorage(passName, formData);
     savedPassList[passName] = formData;
 
-    renderPassList() 
+    renderPassList();
+    showPassInfo(formData);
+    window.app.currentPassId = passName;
     closeModal();
 };
 
 function editAuth(event) {
     const target = event.target;
-
-    if (!target.classList.contains('button-edit')) {
-        return;
-    }
-
-    if (target.closest('button-edit')){
+    
+    if (!target.classList.contains('button-edit') && !target.closest('.button-edit')) {
         return;
     }
 
@@ -330,10 +328,17 @@ function editAuth(event) {
     openModal();
 }
 
-function deleteAuth() {
+function deleteAuth(event) {
+    const target = event.target;
+
+    if (!target.classList.contains('button-delete') && !target.closest('.button-delete')) {
+        return;
+    }
+
     delete savedPassList[window.app.currentPassId];
 
     localStorage.setItem('winPas', JSON.stringify(savedPassList));
 
     renderPassList();
+    showPassInfo(savedPassList[Object.keys(savedPassList)[0]]);
 }
