@@ -161,7 +161,7 @@
   cursor: pointer;
 }
 
-.wrapper-buttons-password {
+.wrapper-buttons {
   display: flex;
   align-items: center;
 }
@@ -172,7 +172,7 @@
   display: block;
   margin-top: 34px;
 }
-.list {
+.list-item {
     overflow-wrap: anywhere;
 }
 

@@ -20,8 +20,8 @@
         </button>
       </div>
 
-      <ul>
-        <li class="list">
+      <ul class="list">
+        <!-- <li class="list-item" >
           <div class="wrapper-logo-left">
             <img class="logo-one" src="" alt="logo" />
             <div class="wrapper-subtitle-text">
@@ -29,12 +29,12 @@
               <p class="logo-text-mail">thomas@gmail.com</p>
             </div>
           </div>
-        </li>
+        </li> -->
       </ul>
     </section>
 
     <section class="section-demo">
-      <div class="buttons-wrapper">
+      <!-- <div class="buttons-wrapper">
         <button class="button-change button-edit" type="">
           <img src="./images/path.svg" alt="waste-basket" />
           <span
@@ -47,21 +47,23 @@
             class="button-text">Delete
           </span>
         </button>
-      </div>
+      </div> -->
 
-      <div class="wrapper-logo-right">
+      <!-- <div class="wrapper-logo-right">
         <img class="logo-two" alt="logo" />
         <h2 class="logo-subtitle-two">Adobe</h2>
-      </div>
+      </div> -->
 
-      <div class="wrapper-demo hover">
-        <div class="wraper-login">
+      <!-- <div class="wrapper-demo hover">
+        <div>
           <h3 class="subtitle">Login</h3>
           <p class="text">thomas@gmail.com</p>
         </div>
-        <button class="button">
-          <img src="./images/copy.svg" alt="" />
-        </button>
+        <div class="wrapper-buttons">
+          <button class="button">
+            <img src="./images/copy.svg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div class="wrapper-demo hover">
@@ -69,7 +71,7 @@
           <h3 class="subtitle">Password</h3>
           <p class="text">**************</p>
         </div>
-        <div class="wrapper-buttons-password">
+        <div class="wrapper-buttons">
           <button class="button">
             <img src="./images/eye.svg" alt="" />
           </button>
@@ -91,7 +93,7 @@
           <h3 class="subtitle">Notes</h3>
           <p class="text">Lorem ipsum</p>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <div class="modal-container">
@@ -101,17 +103,17 @@
           </button>
           <form action="#" method="post" class="modal-input-wrapper">
             <p class="modal-title">name</p>
-            <input type="text" name="name" class="modal-input ">
+            <input type="text" name="name" class="modal-input" required>
             <p class="modal-title">login</p>
-            <input type="email" name="login" class="modal-input ">
+            <input type="text" name="login" class="modal-input" required>
             <p class="modal-title">password</p>
-            <input type="password" name="password" class="modal-input">
+            <input type="password" name="password" class="modal-input" required>
             <p class="modal-title">website</p>
-            <input type="url" name="url" class="modal-input">
+            <input type="text" name="webSite" class="modal-input" required>
             <p class="modal-title">logo</p>
-            <input type="url" name="logo" class="modal-input">
+            <input type="text" name="logo" class="modal-input" required>
             <p class="modal-title">notes</p>
-            <textarea class="modal-input modal-input-notes"></textarea>
+            <textarea class="modal-input modal-input-notes" name="notes" required></textarea>
             <button type="submit" class="modal-save-button">Save</button>
           </form>
       </div>
