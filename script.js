@@ -45,6 +45,7 @@ passList.addEventListener('click', (event) => {
 
 passInfoContent.addEventListener('click', editAuth);
 passInfoContent.addEventListener('click', deleteAuth);
+passInfoContent.addEventListener('click', copeValue);
 
 function showPassList(pass) {
     const  passItem = createPassList(pass);
@@ -186,9 +187,14 @@ function createPassInfo(data) {
     text.textContent = value;
 
     wrapp.append(text);
+    
+    if(key !== 'login' && key !== 'password') {
+        return wrapper;
+    }
 
     const buttonWrapper = document.createElement('div');
     buttonWrapper.classList.add('wrapper-buttons');
+    wrapper.append(buttonWrapper)
     
     const buttonCopy = document.createElement('button');
     buttonCopy.classList.add('button-copy', 'button');
@@ -198,15 +204,20 @@ function createPassInfo(data) {
 
     buttonCopy.append(buttonCopyImg);
 
+    buttonWrapper.append(buttonCopy);
+
+    if(key !== 'password') {
+        return wrapper;
+    }
+
     const buttonShowPass = document.createElement('button');
     buttonShowPass.classList.add('button-show-pass', 'button');
 
     const buttonShowPassImg = document.createElement('img');
     buttonShowPassImg.setAttribute('src', './images/eye.svg');
 
-    buttonCopy.append(buttonShowPassImg);
+    buttonShowPass.append(buttonShowPassImg);
 
-    buttonWrapper.append(buttonCopy);
     buttonWrapper.append(buttonShowPass);
 
     return wrapper;
@@ -341,4 +352,17 @@ function deleteAuth(event) {
 
     renderPassList();
     showPassInfo(savedPassList[Object.keys(savedPassList)[0]]);
+}
+
+function copeValue(event) {
+    const target = event.target;
+
+    const wrapper = target.closest('.wrapper-demo');
+    const value = wrapper.querySelector('.text').textContent;
+
+    if(!target.closest('.button-copy')) {
+        return;
+    }
+
+    navigator.clipboard.writeText(value);
 }
