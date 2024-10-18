@@ -46,6 +46,7 @@ passList.addEventListener('click', (event) => {
 passInfoContent.addEventListener('click', editAuth);
 passInfoContent.addEventListener('click', deleteAuth);
 passInfoContent.addEventListener('click', copeValue);
+passInfoContent.addEventListener('click', showOrHidePassword);
 
 function showPassList(pass) {
     const  passItem = createPassList(pass);
@@ -169,6 +170,14 @@ function createPassInfo(data) {
 
     const {key, value} = data;
 
+    let passValue = value;
+
+    if(key === 'password') {
+        // passValue = passValue.split('').map(num => '*').join('');
+
+        
+    }
+
     const wrapper = document.createElement('div');
     wrapper.classList.add('wrapper-demo', 'hover');
 
@@ -182,10 +191,19 @@ function createPassInfo(data) {
     
     wrapp.append(subtitle);
 
-    const text = document.createElement('p');
-    text.classList.add('text');
-    text.textContent = value;
+    let newTag;
 
+    if(key === 'password') {
+        newTag = 'input';
+    } else {
+        newTag = 'p';
+    }
+    const text = document.createElement(newTag);
+    
+    text.classList.add('text');
+    text.textContent = passValue;
+    text.value = passValue
+    text.setAttribute('readonly', true)
     wrapp.append(text);
     
     if(key !== 'login' && key !== 'password') {
@@ -357,12 +375,29 @@ function deleteAuth(event) {
 function copeValue(event) {
     const target = event.target;
 
-    const wrapper = target.closest('.wrapper-demo');
-    const value = wrapper.querySelector('.text').textContent;
-
     if(!target.closest('.button-copy')) {
         return;
     }
 
+    const wrapper = target.closest('.wrapper-demo');
+    const value = wrapper.querySelector('.text').textContent;
+
+    
+
     navigator.clipboard.writeText(value);
+}
+
+function showOrHidePassword(event) {
+    const target = event.target;
+    const showButton = target.closest('.button-show-pass');
+    
+    if(!showButton) { 
+        return;
+    }
+
+    const targetWrapper = showButton.closest('.wrapper-demo');
+    const passValue = targetWrapper.querySelector('.text');
+    const currentType = passValue.type;
+
+    currentType === 'text' ? passValue.setAttribute('type', 'password') : passValue.setAttribute('type', 'text')
 }

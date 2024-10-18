@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>master-parol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page">
+    <div class="content">
+      <section class="section-add">
+        <div class="wrapper">
+          <button class="button-plus add-new-password">
+            <img class="image-plus" src="./images/plus.svg" alt="plus" />
+          </button>
+        </div>
+        <ul class="list"></ul>
+      </section>
+      <section class="section-demo"></section>
+    </div>
+    <div class="modal-container">
+      <div class="modal-window">
+          <button class="modal-close-button">
+              <img src="./images/btn-close.svg" alt="x" class="modal-close-button-img">
+          </button>
+          <form action="#" method="post" class="modal-input-wrapper">
+            <p class="modal-title">name</p>
+            <input type="text" name="name" class="modal-input" required>
+            <p class="modal-title">login</p>
+            <input type="text" name="login" class="modal-input" required>
+            <p class="modal-title">password</p>
+            <input type="password" name="password" class="modal-input" required>
+            <p class="modal-title">website</p>
+            <input type="text" name="webSite" class="modal-input" required>
+            <p class="modal-title">logo</p>
+            <input type="text" name="logo" class="modal-input" required>
+            <p class="modal-title">notes</p>
+            <textarea class="modal-input modal-input-notes" name="notes" required></textarea>
+            <button type="submit" class="modal-save-button">Save</button>
+          </form>
+      </div>
+  </div>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
