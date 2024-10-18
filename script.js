@@ -369,7 +369,11 @@ function deleteAuth(event) {
     localStorage.setItem('winPas', JSON.stringify(savedPassList));
 
     renderPassList();
-    showPassInfo(savedPassList[Object.keys(savedPassList)[0]]);
+    const firsPassName = Object.keys(savedPassList)[0];
+    
+    showPassInfo(savedPassList[firsPassName]);
+    
+    window.app.currentPassId = firsPassName;
 }
 
 function copeValue(event) {
