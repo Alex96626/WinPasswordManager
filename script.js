@@ -1,4 +1,3 @@
-debugger
 const openButton = document.querySelector('.add-new-password');
 const closeButton = document.querySelector('.modal-close-button');
 const savePass = document.querySelector('.modal-save-button');
